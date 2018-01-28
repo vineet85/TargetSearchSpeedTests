@@ -53,15 +53,25 @@ namespace TargetInterviewCaseStudy3
 
             if (hashTable.ContainsKey(searchTerm))
             {
+                // Find word/results in hashtable
                 Dictionary<string, int> resultsDict = hashTable[searchTerm];
-            
+                
+                // Add to results.
                 foreach (KeyValuePair<string, int> result in resultsDict)
                 {
                     results.Add(new KeyValuePair<string, int>(result.Key, result.Value));
                 }
-
-                PrintSearchResults(results);
             }
+            else
+            {
+                // Adding empty set if word not found in hashtable.
+                foreach (var item in documentTextPairs)
+                {
+                    results.Add(new KeyValuePair<string, int>(item.Key, 0));
+                }
+            }
+
+            PrintSearchResults(results);
         }
     }
 }

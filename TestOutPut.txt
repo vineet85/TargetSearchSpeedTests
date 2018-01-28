@@ -1,0 +1,4 @@
+New Test Started
+Elapsed Time(seconds) for StringMatch test is: 135.464
+Elapsed Time(seconds) for RegularExpressions test is: 68.587
+Elapsed Time(seconds) for PreProcess test is: 10.89

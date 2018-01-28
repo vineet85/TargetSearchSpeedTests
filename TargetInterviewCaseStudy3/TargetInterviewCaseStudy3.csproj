@@ -53,5 +53,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SearchFiles\french_armed_forces.txt" />
+    <Content Include="SearchFiles\hitchhikers.txt" />
+    <Content Include="SearchFiles\warp_drive.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

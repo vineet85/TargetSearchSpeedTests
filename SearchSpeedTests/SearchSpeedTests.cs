@@ -11,8 +11,8 @@ namespace SearchSpeedTests
     public class SearchSpeedTests
     {
         const int numberofSearches = 2000000;
-        const string filePath = @"C:\Users\vinee\OneDrive\Documents\Visual Studio 2017\Projects\TargetInterviewCaseStudy3\TargetInterviewCaseStudy3\bin\Debug\SearchFiles";
-        const string testfilePath = @"C:\Users\vinee\OneDrive\Documents\Visual Studio 2017\Projects\TargetInterviewCaseStudy3\TargetInterviewCaseStudy3\bin\Debug\";
+        const string filePath = @"C:\Users\vinee\OneDrive\Documents\Visual Studio 2017\Projects\TargetInterviewCaseStudy3\TargetInterviewCaseStudy3\SearchFiles";
+        const string testOutputFilePath = @"C:\Users\vinee\OneDrive\Documents\Visual Studio 2017\Projects\TargetInterviewCaseStudy3\TargetInterviewCaseStudy3\";
         static List<string> words = new List<string>();
         static StringMatchSearch sm;
         static RegularExpressionSearch rg;
@@ -26,7 +26,7 @@ namespace SearchSpeedTests
             pp = new PreProcessSearch(filePath);
 
             // Create output file for tests
-            WriteToOutPutFile(testfilePath, "New Test Started", false);
+            WriteToOutPutFile(testOutputFilePath, "New Test Started", false);
 
             // Initialize words for test
             foreach (var docTextPair in sm.documentTextPairs)
@@ -63,7 +63,7 @@ namespace SearchSpeedTests
 
             double seconds = (double)sw.ElapsedMilliseconds / 1000;
 
-            WriteToOutPutFile(testfilePath, string.Format("Elapsed Time(seconds) for StringMatch test is: {0}", seconds), true);
+            WriteToOutPutFile(testOutputFilePath, string.Format("Elapsed Time(seconds) for StringMatch test is: {0}", seconds), true);
         }
 
         private string SantitizeTerm(string searchTerm)
@@ -92,7 +92,7 @@ namespace SearchSpeedTests
 
             double seconds = (double)sw.ElapsedMilliseconds / 1000;
 
-            WriteToOutPutFile(testfilePath, string.Format("Elapsed Time(seconds) for RegularExpressions test is: {0}", seconds), true);
+            WriteToOutPutFile(testOutputFilePath, string.Format("Elapsed Time(seconds) for RegularExpressions test is: {0}", seconds), true);
         }
 
         [TestMethod]
@@ -114,7 +114,7 @@ namespace SearchSpeedTests
 
             double seconds = (double)sw.ElapsedMilliseconds / 1000;
 
-            WriteToOutPutFile(testfilePath, string.Format("Elapsed Time(seconds) for PreProcess test is: {0}", seconds), true);
+            WriteToOutPutFile(testOutputFilePath, string.Format("Elapsed Time(seconds) for PreProcess test is: {0}", seconds), true);
         }
     }
 }

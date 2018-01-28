@@ -10,7 +10,7 @@ namespace SearchSpeedTests
     [TestClass]
     public class SearchSpeedTests
     {
-        const int numberofSearches = 1000000;
+        const int numberofSearches = 2000000;
         const string filePath = @"C:\Users\vinee\OneDrive\Documents\Visual Studio 2017\Projects\TargetInterviewCaseStudy3\TargetInterviewCaseStudy3\bin\Debug\SearchFiles";
         const string testfilePath = @"C:\Users\vinee\OneDrive\Documents\Visual Studio 2017\Projects\TargetInterviewCaseStudy3\TargetInterviewCaseStudy3\bin\Debug\";
         static List<string> words = new List<string>();

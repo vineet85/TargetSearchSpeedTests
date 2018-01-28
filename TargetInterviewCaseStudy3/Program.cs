@@ -32,7 +32,6 @@ namespace TargetInterviewCaseStudy3
                 Console.WriteLine("Run New Search (Y/N)");
                 continueRunning = Console.ReadLine();
             }
-            
         }
     }
 }

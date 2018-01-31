@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace TargetInterviewCaseStudy3
 {
@@ -27,7 +28,11 @@ namespace TargetInterviewCaseStudy3
         private int GetSearchHits(string searchText, string searchTerm)
         {
             int hits = 0;
-            foreach (string word in searchText.Split(' '))
+
+            var punctuation = searchText.Where(Char.IsPunctuation).Distinct().ToArray();
+            var words = searchText.Split().Select(x => x.Trim(punctuation));
+
+            foreach (string word in words)
             {
                 if (word == searchTerm) hits++;
             }

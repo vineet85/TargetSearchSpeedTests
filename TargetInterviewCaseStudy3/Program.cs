@@ -15,8 +15,13 @@ namespace TargetInterviewCaseStudy3
 
             while(continueRunning.ToLower() == "y")
             {
-                Console.WriteLine("Enter the path of files to be searched:");
+                Console.WriteLine("Enter the path of files to be searched(Eg:- C:/Users/..) otherwise default assumed:");
                 string filePath = Console.ReadLine();
+
+                if(filePath == string.Empty)
+                {
+                    filePath = "..\\..\\SearchFiles";
+                }
 
                 Console.WriteLine("Enter the type of search (StringMatch, RegularExpressions, PreProcess): ");
                 string searchType = Console.ReadLine().ToLower();

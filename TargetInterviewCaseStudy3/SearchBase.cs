@@ -12,16 +12,24 @@ namespace TargetInterviewCaseStudy3
         public List<KeyValuePair<string, string>> documentTextPairs;
         protected List<KeyValuePair<string, int>> results;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchBase"/> class.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
         public SearchBase(string filePath)
         {
             documentTextPairs = new List<KeyValuePair<string, string>>();
 
-            // Read files from directory and populate inmemory store
+            // Read files from directory and populate in-memory KeyValuePair store
             string[] fileEntries = Directory.GetFiles(filePath);
             foreach (string fileName in fileEntries)
                 ProcessFile(fileName);
         }
 
+        /// <summary>
+        /// Processes the input files into KeyValuePair format. i.e FileName - FileText
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
         private void ProcessFile(string filePath)
         {
             string text = File.ReadAllText(filePath);
@@ -29,6 +37,10 @@ namespace TargetInterviewCaseStudy3
                 (Path.GetFileName(filePath), text));
         }
 
+        /// <summary>
+        /// Prints the search results.
+        /// </summary>
+        /// <param name="results">The results.</param>
         protected void PrintSearchResults(List<KeyValuePair<string, int>> results)
         {
             foreach (KeyValuePair<string, int> resultPair in results)
@@ -39,6 +51,12 @@ namespace TargetInterviewCaseStudy3
 
         public abstract void SearchPrintResults(string searchTerm);
 
+        /// <summary>
+        /// Creates the search class based on input.
+        /// </summary>
+        /// <param name="searchType">Type of the search.</param>
+        /// <param name="filePath">The file path.</param>
+        /// <returns></returns>
         public static SearchBase CreateSearchType(SearchType searchType, string filePath)
         {
             switch(searchType)

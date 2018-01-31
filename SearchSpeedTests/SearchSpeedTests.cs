@@ -7,10 +7,13 @@ using System.Text.RegularExpressions;
 
 namespace SearchSpeedTests
 {
+    /// <summary>
+    /// Class to test out speed of different types of tests.
+    /// </summary>
     [TestClass]
     public class SearchSpeedTests
     {
-        const int numberofSearches = 2000000;
+        const int numberofSearches = 200;
         const string filePath = @"..\\..\\..\\TargetInterviewCaseStudy3\\SearchFiles";
         const string testOutputFilePath = @"..\\..\\..\\";
         static List<string> words = new List<string>();
@@ -44,6 +47,9 @@ namespace SearchSpeedTests
             }
         }
 
+        /// <summary>
+        /// Tests the string match test speed.
+        /// </summary>
         [TestMethod]
         public void TestStringMatchTestSpeed()
         {
@@ -73,6 +79,9 @@ namespace SearchSpeedTests
             return searchTerm;
         }
 
+        /// <summary>
+        /// Tests the regular expressions test speed.
+        /// </summary>
         [TestMethod]
         public void TestRegularExpressionsTestSpeed()
         {
@@ -95,6 +104,9 @@ namespace SearchSpeedTests
             WriteToOutPutFile(testOutputFilePath, string.Format("Elapsed Time(seconds) for RegularExpressions test is: {0}", seconds), true);
         }
 
+        /// <summary>
+        /// Tests the pre process test speed.
+        /// </summary>
         [TestMethod]
         public void TestPreProcessTestSpeed()
         {
